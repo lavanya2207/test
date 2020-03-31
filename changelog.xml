@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+		 
+	<changeSet id="bugfix_liquibase_primary_key_for_mysql_group_replication" author="romain.dequidt">
+
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="DATABASECHANGELOG"/>
+
+    </changeSet>
+
+
+    <changeSet id="1" author="lavanya">
+        <createTable tableName="department">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active" type="boolean"
+              defaultValueBoolean="true"/>
+        </createTable>
+   </changeSet>
+</databaseChangeLog>
